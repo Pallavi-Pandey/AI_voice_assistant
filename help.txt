@@ -1,0 +1,22 @@
+# LiveKit Import Fix
+
+## Error
+```
+ModuleNotFoundError: No module named 'livekit.agents.multimodal'
+```
+
+## Fixes
+
+1. In agent.py:
+   - Changed: `from livekit.agents.multimodal import MultimodalAgent`
+   - To: `from livekit.agents import Agent` and `MultimodalAgent = Agent`
+
+2. In api.py:
+   - Changed: `class AssistantFuc(llm.FunctionContext)`
+   - To: `class AssistantFuc(llm.FunctionTool)`
+
+After these changes, the application runs successfully.
+
+## Required Packages
+
+No additional packages are needed. The issue was related to incorrect import paths, not missing packages. The requirements.txt file already contains all necessary dependencies

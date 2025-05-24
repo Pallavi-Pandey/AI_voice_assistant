@@ -5,9 +5,11 @@ from livekit.agents import (
     JobContext,
     WorkerOptions,
     cli,
-    llm
+    llm,
+    Agent,
+    RoomIO
 )
-from livekit.agents.multimodal import MultimodalAgent
+MultimodalAgent = Agent
 from livekit.plugins import openai
 from dotenv import load_dotenv
 from api import AssistantFuc
